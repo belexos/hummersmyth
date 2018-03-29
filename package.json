@@ -1,0 +1,51 @@
+{
+  "name": "hummersmyth",
+  "version": "1.0.0",
+  "description": "Hummersmyth is a tiny and simple yet powerful HTML renderer and DOM creator for Node.js and the Browser.",
+  "main": "hummersmyth.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "nyc ./node_modules/.bin/jasmine",
+    "build": "grunt build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/belexos/hummersmyth.git"
+  },
+  "keywords": [
+    "html",
+    "tags",
+    "elements",
+    "render",
+    "renderer",
+    "dom",
+    "builder",
+    "creator",
+    "snippet",
+    "injection",
+    "template",
+    "engine"
+  ],
+  "author": "Br00ze <br00ze@belexos.com> (http://belexos.com)",
+  "license": "MIT",
+  "homepage": "https://github.com/belexos/hummersmyth#readme",
+  "nyc": {
+    "exclude": [
+      "**/*Spec.js"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jasmine": "^3.1.0",
+    "nyc": "^11.4.1"
+  }
+}

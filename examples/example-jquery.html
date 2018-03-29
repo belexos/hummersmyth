@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hummersmyth example</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../hummersmyth.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+        	// div is just a shortcut ...
+        	const div = Hummersmyth.div;
+
+        	var snippet = div({ id: 'main' }, "Blah");
+
+            $('body').append(snippet);
+        });
+    </script>
+</body>
+</html>
