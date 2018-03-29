@@ -195,7 +195,7 @@ var page =
 
 More examples
 -------------
-Please refer to the [test spec]((https://github.com/belexos/hummersmyth/blob/master/spec/HummersmythSpec.js)) for more examples.
+Please refer to the [test spec](https://github.com/belexos/hummersmyth/blob/master/spec/HummersmythSpec.js) for more examples.
 
 
 API
