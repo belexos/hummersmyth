@@ -273,6 +273,9 @@ Support
 
 Changelog
 ---------
+v1.0.1
+* Update npm modules.
+
 v1.0.0
 * Initial public release
 
