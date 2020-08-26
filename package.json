@@ -1,14 +1,18 @@
 {
   "name": "hummersmyth",
-  "version": "1.0.3",
-  "description": "Hummersmyth is a tiny and simple yet powerful HTML renderer and DOM creator for Node.js and the Browser.",
+  "version": "1.1.0",
+  "description": "Hummersmyth is a tiny and simple yet powerful HTML renderer and DOM creator for Node.js and the browser.",
   "main": "hummersmyth.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "nyc ./node_modules/.bin/jasmine",
-    "build": "grunt build"
+    "build": "grunt build",
+    "coverage": "nyc ./node_modules/.bin/jasmine",
+    "lint": "grunt jshint",
+    "test": "./node_modules/.bin/jasmine && npx karma start test/karma/karma.conf.js --single-run",
+    "test-node": "./node_modules/.bin/jasmine",
+    "test-browser": "npx karma start test/karma/karma.conf.js --single-run"
   },
   "repository": {
     "type": "git",
@@ -42,10 +46,16 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-contrib-uglify": "^2.3.0",
+    "grunt": "^1.3.0",
+    "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-watch": "^1.1.0",
-    "jasmine": "^3.5.0",
-    "nyc": "^15.0.0"
+    "grunt-terser": "^1.0.0",
+    "jasmine": "^3.6.1",
+    "karma": "^5.1.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.3",
+    "karma-firefox-launcher": "^1.3.0",
+    "karma-jasmine": "^4.0.1",
+    "nyc": "^15.1.0"
   }
 }

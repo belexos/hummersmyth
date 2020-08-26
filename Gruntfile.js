@@ -1,18 +1,29 @@
+/**
+ * Hummersmyth - HTML renderer and DOM creator for Node.js and the browser.
+ *
+ * @copyright: Copyright (c) 2013-present, Belexos
+ *
+ * @author: Br00ze <br00ze@belexos.com>
+ *
+ * @license This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 
 'use strict';
 
 module.exports = function(grunt)
 {
-	// Project configuration.
 	grunt.initConfig(
 	{
 		pkg: grunt.file.readJSON('package.json'),
 
-		uglify:
-		{
-			options:
-			{
-				banner: '/*! <%= pkg.name %> V<%= pkg.version %>, Copyright (c) 2013-present, Belexos GmbH. MIT licensed. */'
+		terser: {
+			options: {
+				output: {
+					preamble: '/*! <%= pkg.name %> V<%= pkg.version %>, Copyright (c) 2013-present, Belexos. MIT licensed. */',
+					comments: false
+				}
 			},
 			build: {
 				src: '<%= pkg.name %>.js',
@@ -31,16 +42,30 @@ module.exports = function(grunt)
 					interrupt: true
 				}
 			}
-		}
+		},
 
+		jshint: {
+			options: {
+				esversion: 6,
+				node: true,
+				ignores: [
+				]
+			},
+			all: [
+				'Gruntfile.js',
+				'<%= pkg.name %>.js',
+				'spec/*.js'
+			]
+		}
 	});
 
 	// Load the plugins.
-	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-terser');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Build task(s).
-	grunt.registerTask('build', [ 'uglify:build' ]);
+	grunt.registerTask('build', [ 'terser:build' ]);
 
 	// Default task(s).
 	grunt.registerTask('default', [ 'build' ]);

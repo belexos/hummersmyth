@@ -1,3 +1,14 @@
+/**
+ * Hummersmyth - HTML renderer and DOM creator for Node.js and the browser.
+ *
+ * @copyright: Copyright (c) 2013-present, Belexos
+ *
+ * @author: Br00ze <br00ze@belexos.com>
+ *
+ * @license This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 
 var Hummersmyth = Hummersmyth || require('../hummersmyth');
 
@@ -38,7 +49,7 @@ describe("Hummersmyth", function()
 
 		allTags.forEach(function(tag)
 		{
-			expect(typeof Hummersmyth[tag]).toBe('function')
+			expect(typeof Hummersmyth[tag]).toBe('function');
 		});
 	});
 

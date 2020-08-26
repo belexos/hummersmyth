@@ -1,13 +1,14 @@
 /**
- * Hummersmyth - HTML renderer and DOM creator for Node.js and the Browser.
+ * Hummersmyth - HTML renderer and DOM creator for Node.js and the browser.
  *
- * @copyright: Copyright (c) 2013-present, Belexos GmbH
+ * @copyright: Copyright (c) 2013-present, Belexos
  *
  * @author: Br00ze <br00ze@belexos.com>
  *
  * @license This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+
 
 (function(window)
 {
@@ -57,7 +58,7 @@
 			{
 				if (position === 'afterbegin')
 				{
-					element.prepend(html)
+					element.prepend(html);
 				}
 				else
 				{

@@ -1,7 +1,7 @@
 Hummersmyth
 ===========
 
-`Hummersmyth` is a tiny and simple yet powerful HTML renderer and DOM creator for Node.js and the Browser.
+`Hummersmyth` is a tiny and simple yet powerful HTML renderer and DOM creator for Node.js and the browser.
 `Hummersmyth` has no dependencies.
 
 
@@ -23,11 +23,11 @@ const Hummersmyth = require('hummersmyth');
 ```
 
 ### Browser
-`Hummersmyth` has no dependencies, which makes it easy to include in a Browser.
+`Hummersmyth` has no dependencies, which makes it easy to include in a browser.
 
 You can download the latest release from the repository
-* [`hummersmyth.js`](https://github.com/belexos/hummersmyth/blob/master/hummersmyth.js) unminified including comments, 5.37 kB
-* [`hummersmyth.min.js`](https://github.com/belexos/hummersmyth/blob/master/hummersmyth.min.js) minified version, 2.05 kB
+* [`hummersmyth.js`](https://github.com/belexos/hummersmyth/blob/master/hummersmyth.js) unminified, including comments
+* [`hummersmyth.min.js`](https://github.com/belexos/hummersmyth/blob/master/hummersmyth.min.js) minified version
 
 Use a script tag to directly add `Hummersmyth` to the global scope.
 
@@ -195,7 +195,8 @@ var page =
 
 More examples
 -------------
-Please refer to the [test spec](https://github.com/belexos/hummersmyth/blob/master/spec/HummersmythSpec.js) for more examples.
+Please refer to the [test spec](https://github.com/belexos/hummersmyth/blob/master/spec/HummersmythSpec.js) for more 
+examples.
 
 
 API
@@ -224,21 +225,29 @@ Hummersmyth exports the following list of HTML tags as functions
 - var, video
 - wbr
 
-In the Browser 2 more methods are available to add html snippets to an existing DOM element.
-- Hummersmyth.appendTo(element, html)
-- Hummersmyth.prependTo(element, html)
+In the browser 2 more methods are available to add html snippets to an existing DOM element.
+- `Hummersmyth.appendTo(element, html)`
+- `Hummersmyth.prependTo(element, html)`
 
-Parameter 'element' can be an existing DOM element, a string like "#id-of-element" or "id-of-element" 
-to reference the target element by id or a jQuery object.
+Parameter `element` can be an existing DOM element, a string like `#id-of-element` or `id-of-element` 
+to reference the target element by id, or a jQuery object.
+
 
 Testing
 -------
-We are using [Jasmine testing framework](https://jasmine.github.io/index.html) and [Istanbul test coverage framework](https://istanbul.js.org/).
+We use 
+* [JSHint](https://jshint.com/) for static code analysis.
+* [Jasmine testing framework](https://jasmine.github.io/index.html) for testing.
+* [Karma test runner](https://karma-runner.github.io/latest/index.html) for testing in the browser.
+* [Istanbul test coverage framework](https://istanbul.js.org/) for tracking test coverage.
 
+Steps to be taken
 * Clone or download the repository.
-* Change into project directory.
+* Change into the project directory.
 * Use `npm install` to install all development dependencies.
+* Use `npm runt lint` to run static code analysis. 
 * Use `npm test` to run the tests. 
+* Use `npm run coverage` to track test coverage. 
 * The output should display successful execution results and a code coverage map.
 
 
@@ -246,7 +255,7 @@ Build
 -----
 * Clone or download the repository.
 * Change into project directory.
-* Use `grunt` in project directory to build `hummersmyth.min.js` from `hummersmyth.js`.
+* Use `npm run build` in project directory to build `hummersmyth.min.js` from `hummersmyth.js`.
 
 
 Contribution
@@ -258,11 +267,14 @@ Pull requests are welcome.
 
 Issues
 ------
-We use GitHub issues to track bugs. Please ensure your bug description is clear and has sufficient instructions to be able to reproduce the issue.
+We use GitHub issues to track bugs. Please ensure your bug description is clear and has sufficient instructions to be 
+able to reproduce the issue.
 
-The absolute best way to report a bug is to submit a pull request including a new failing test which describes the bug. When the bug is fixed, your pull request can then be merged.
+The absolute best way to report a bug is to submit a pull request including a new failing test which describes the bug. 
+When the bug is fixed, your pull request can then be merged.
 
-The next best way to report a bug is to provide a reduced test case on jsFiddle or jsBin or produce exact code inline in the issue which will reproduce the bug.
+The next best way to report a bug is to provide a reduced test case on jsFiddle or jsBin or produce exact code inline 
+in the issue which will reproduce the bug.
 
 
 Support
@@ -273,6 +285,15 @@ Support
 
 Changelog
 ---------
+v1.1.0
+* Update npm modules.
+* Update and extend test environment.
+* Add static code analysis tool JSHint.
+* Add Karma test runner.
+* Fix JSHint issues.
+* Replace uglify-js by terser for minification.
+* Update README.
+
 v1.0.3
 * Update npm modules.
 
@@ -288,4 +309,5 @@ v1.0.0
 
 License
 -------
-Copyright (c) 2013-present, Belexos GmbH. `Hummersmyth` is licensed under the [MIT License](https://github.com/belexos/hummersmyth/blob/master/LICENSE).
+Copyright (c) 2013-present, Belexos. `Hummersmyth` is licensed under the 
+[MIT License](https://github.com/belexos/hummersmyth/blob/master/LICENSE).
